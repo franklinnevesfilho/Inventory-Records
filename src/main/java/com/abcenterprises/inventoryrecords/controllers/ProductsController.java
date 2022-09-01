@@ -108,7 +108,7 @@ public class ProductsController implements Initializable {
     public void addProductBtn() throws IOException {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/addProducts-view.fxml"));
-            Parent root = (Parent)fxmlLoader.load();
+            Parent root = fxmlLoader.load();
             Stage stage = new Stage();
 
             stage.setTitle("ABC add Product");

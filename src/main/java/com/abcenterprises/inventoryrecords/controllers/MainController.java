@@ -80,7 +80,7 @@ public class MainController implements Initializable{
         Pane view = fxmlLoader.load();
 
         ManufacturersController manufacturersController = fxmlLoader.getController();
-        manufacturersController.updateTable(this.database.getManufacturersList());
+        manufacturersController.loadManufacturers(this.database);
 
         borderPane.setCenter(view);
     }

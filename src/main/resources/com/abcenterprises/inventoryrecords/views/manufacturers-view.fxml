@@ -10,7 +10,7 @@
                 <TextField promptText="Search Manufacturers" />
                 <HBox alignment="CENTER">
                     <children>
-                        <Button mnemonicParsing="false" text="Add Manufacturer" />
+                        <Button fx:id="addManufacturerBtn" mnemonicParsing="false" onAction="#addManufacturerBtn" text="Add Manufacturer" />
                     </children>
                 </HBox>
             </children>

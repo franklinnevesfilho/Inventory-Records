@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="153.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcenterprises.inventoryrecords.controllers.AddManufacturersController">
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="542.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="doneBtn" mnemonicParsing="false" onAction="#addBtnClicked" text="DONE" />
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Add Manufacturer" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="0.0" />
+                  <TextField fx:id="newCompanyName" prefHeight="25.0" prefWidth="284.0" promptText="Product Name" />
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <TextField fx:id="addressStreet" prefHeight="25.0" prefWidth="163.0" promptText="Street " />
+                        <TextField fx:id="addressCity" prefHeight="25.0" prefWidth="122.0" promptText="City" />
+                  <TextField fx:id="addressState" prefHeight="25.0" prefWidth="72.0" promptText="State" />
+                  <TextField fx:id="addressZip" layoutX="340.0" layoutY="20.0" prefHeight="25.0" prefWidth="104.0" promptText="Zip" />
+                  <TextField fx:id="addressCountry" layoutX="394.0" layoutY="20.0" prefHeight="25.0" prefWidth="118.0" promptText="Country" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

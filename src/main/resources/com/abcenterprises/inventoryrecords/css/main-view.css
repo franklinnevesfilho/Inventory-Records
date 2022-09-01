@@ -1,0 +1,33 @@
+#navBar{
+    -fx-padding: 10;
+    -fx-border-style: solid;
+    -fx-border-width: 2;
+    -fx-border-insets: 2px;
+    -fx-border-radius: 5;
+    -fx-border-color: black;
+}
+#deleteProduct {
+    -fx-border-color: red;
+}
+
+#deleteProduct:hover{
+    -fx-text-fill: white;
+    -fx-background-color: red;
+    -fx-font-weight: bold;
+}
+.button{
+    -fx-min-width: 90;
+    -fx-min-height: 40;
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-text-fill: black;
+
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+.button:hover {
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}

@@ -1,10 +1,8 @@
 package com.abcenterprises.inventoryrecords.controllers.manufacturers;
 
 import com.abcenterprises.inventoryrecords.Application;
-import com.abcenterprises.inventoryrecords.Database;
-import com.abcenterprises.inventoryrecords.Manufacturer;
-import com.abcenterprises.inventoryrecords.controllers.manufacturers.AddManufacturersController;
-import com.abcenterprises.inventoryrecords.controllers.products.EditProductsController;
+import com.abcenterprises.inventoryrecords.dataStorage.Database;
+import com.abcenterprises.inventoryrecords.dataStorage.Manufacturer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

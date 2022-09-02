@@ -1,6 +1,7 @@
 package com.abcenterprises.inventoryrecords;
 
 import com.abcenterprises.inventoryrecords.controllers.MainController;
+import com.abcenterprises.inventoryrecords.dataStorage.Database;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -16,9 +17,19 @@ import java.io.IOException;
  *      This program initializes a new Database object
  *      and through the GUI allows the user to update and
  *      modify the database.
+ *
+ *      For the GUI I have used JavaFX, as it allows for
+ *      css styling throughout
+ *
+ *      the controllers package contains the controllers for the
+ *      fxml files of the gui
+ *
+ *      This program as of now does not contain the ability to track sales,
+ *      but provides a base for further development.
  */
 
 public class Application extends javafx.application.Application {
+    // Once the application starts a new database is created.
     public Database database = new Database();
 
     @Override

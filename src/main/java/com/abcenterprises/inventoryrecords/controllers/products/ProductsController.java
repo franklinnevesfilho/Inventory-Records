@@ -1,9 +1,11 @@
 package com.abcenterprises.inventoryrecords.controllers.products;
 
 import com.abcenterprises.inventoryrecords.*;
-import com.abcenterprises.inventoryrecords.controllers.products.AddProductsController;
+import com.abcenterprises.inventoryrecords.dataStorage.Database;
+import com.abcenterprises.inventoryrecords.dataStorage.Manufacturer;
+import com.abcenterprises.inventoryrecords.dataStorage.Product;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -40,6 +43,9 @@ public class ProductsController implements Initializable {
 
     @FXML
     Button addProductBtn;
+
+    @FXML
+    TextField searchBar;
     // ===============================================================================================
     // The Initialize method is run once the class is initialized. so when the screen pops up.
     // It establishes the columns and rows for the table, as well as the method in which the user
@@ -104,15 +110,23 @@ public class ProductsController implements Initializable {
 
         // When item is selected
         productsTable.getSelectionModel().selectedItemProperty().addListener((observableValue, product, t1) -> {
-            // enable delete button
-            deleteProduct.setDisable(false);
-            editProductBtn.setDisable(false);
-
             // sets current product selected
             productSelected = productsTable.getSelectionModel().getSelectedItem();
 
-            // action listener will delete the item selected
-            deleteProduct.setOnAction(actionEvent -> deleteProduct(productSelected));
+            if(productsTable.getItems().equals(this.database.getProductsList())){
+
+                // enable delete and edit buttons only if active products are visible
+                deleteProduct.setDisable(false);
+                editProductBtn.setDisable(false);
+
+                // action listener will delete the item selected
+                deleteProduct.setOnAction(actionEvent -> deleteProduct(productSelected));
+
+            }else if(productsTable.getItems().equals(this.database.getDeletedProducts())){
+                // deleteBtn becomes restore button
+                deleteProduct.setDisable(false);
+                deleteProduct.setOnAction(actionEvent -> undoDelete(productSelected));
+            }
         });
 
     }
@@ -126,17 +140,38 @@ public class ProductsController implements Initializable {
 
     // Shows the activeProducts List
     public void showActiveProducts(){
+        deleteProduct.setText("Delete Product");
+        deleteProduct.setDisable(true);
+        editProductBtn.setDisable(true);
         productsTable.setItems(database.getProductsList());
     }
     // Shows the InactiveProducts List
     public void showInactiveProducts(){
+        deleteProduct.setText("Restore Product");
+        deleteProduct.setDisable(true);
+        editProductBtn.setDisable(true);
         productsTable.setItems(database.getDeletedProducts());
+    }
+
+    @FXML
+    public void searchBar(ActionEvent event){
+        if(!searchBar.getText().isBlank()){
+            productsTable.setItems(database.searchProduct(searchBar.getText()));
+        }else{
+            this.showActiveProducts();
+        }
     }
 
     // Deletes the product
     public void deleteProduct(Product product){
         this.database.removeProduct(product);
     }
+
+    //restores deleted product
+    public void undoDelete(Product product){
+        this.database.undoDeleteProduct(product);
+    }
+
 
     // Opens new window to type in information about new product (see AddProductsController)
     // adds the product to the database
@@ -159,11 +194,6 @@ public class ProductsController implements Initializable {
         }catch(Exception e){
 
         }
-    }
-
-    // This method is called to refresh the table once it has been modified
-    public void refreshTable(){
-        productsTable.refresh();
     }
 
     // Opens new window to change information about the selected product (see EditProductsController)
@@ -189,6 +219,10 @@ public class ProductsController implements Initializable {
         }
     }
 
+    // This method is called to refresh the table once it has been modified
+    public void refreshTable(){
+        productsTable.refresh();
+    }
     public Database getDatabase(){
         return this.database;
     }

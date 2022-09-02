@@ -1,4 +1,4 @@
-package com.abcenterprises.inventoryrecords;
+package com.abcenterprises.inventoryrecords.dataStorage;
 
 public class Address {
     private String street;

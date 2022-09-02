@@ -16,11 +16,14 @@
     -fx-font-weight: bold;
 }
 .button{
-    -fx-min-width: 90;
+    -fx-min-width: 105;
     -fx-min-height: 40;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
     -fx-background-color: transparent;
     -fx-border-color: black;
     -fx-text-fill: black;
+    -fs-text-Wrap: line-through;
 
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;

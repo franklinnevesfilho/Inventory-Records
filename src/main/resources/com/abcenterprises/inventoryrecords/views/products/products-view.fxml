@@ -3,34 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcenterprises.inventoryrecords.controllers.products.ProductsController">
-   <bottom>
-      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
-         <children>
-            <TextField promptText="Search Product" />
-            <Separator layoutX="10.0" layoutY="60.0" opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="0.0" />
-            <HBox alignment="CENTER">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#showActiveProducts" text="Active Products" />
-                  <Separator opacity="0.0" prefHeight="0.0" prefWidth="10.0" />
-                  <Button mnemonicParsing="false" onAction="#showInactiveProducts" text="Deleted Products" />
-               </children>
-            </HBox>
-            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="0.0" />
-            <Button fx:id="addProductBtn" mnemonicParsing="false" onAction="#addProductBtn" text="Add Product" />
-            <Separator layoutX="307.0" layoutY="70.0" opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="0.0" />
-            <HBox alignment="CENTER">
-               <children>
-                  <Button fx:id="editProductBtn" mnemonicParsing="false" onAction="#editProductBtn" text="Edit Product" />
-                  <Separator opacity="0.0" prefHeight="0.0" prefWidth="10.0" />
-                  <Button fx:id="deleteProduct" mnemonicParsing="false" text="Delete Product" />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </bottom>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcenterprises.inventoryrecords.controllers.products.ProductsController">
    <center>
-      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" BorderPane.alignment="CENTER">
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
          <content>
             <TableView fx:id="productsTable" prefHeight="200.0" prefWidth="200.0">
               <columns>
@@ -44,4 +19,34 @@
          </content>
       </ScrollPane>
    </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <TextField fx:id="searchBar" onAction="#searchBar" promptText="Search Products" />
+                  <Separator layoutX="10.0" layoutY="60.0" opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="0.0" />
+                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="0.0" />
+                  <Button fx:id="addProductBtn" mnemonicParsing="false" onAction="#addProductBtn" text="Add Product" />
+                  <Separator layoutX="307.0" layoutY="70.0" opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="0.0" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="editProductBtn" mnemonicParsing="false" onAction="#editProductBtn" text="Edit Product" />
+                        <Separator opacity="0.0" prefHeight="0.0" prefWidth="10.0" />
+                        <Button fx:id="deleteProduct" mnemonicParsing="false" text="Delete Product" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Separator opacity="0.0" prefHeight="0.0" prefWidth="20.0" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#showActiveProducts" text="Active Products" />
+                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="0.0" />
+                  <Button mnemonicParsing="false" onAction="#showInactiveProducts" text="Deleted Products" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>

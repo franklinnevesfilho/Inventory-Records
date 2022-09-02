@@ -1,7 +1,4 @@
-package com.abcenterprises.inventoryrecords;
-
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+package com.abcenterprises.inventoryrecords.dataStorage;
 
 public class Product {
     private Manufacturer manufacturer;

@@ -1,4 +1,4 @@
-package com.abcenterprises.inventoryrecords;
+package com.abcenterprises.inventoryrecords.dataStorage;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,12 +45,31 @@ public class Database {
         }
     }
 
+    public void undoDeleteProduct(Product product) {
+        int index = this.inactiveProducts.indexOf(product);
+        if(index != -1){
+            this.inactiveProducts.remove(product);
+            this.activeProducts.add(product);
+            // will add to activeProducts
+        }
+    }
+
     // will check if the manufacturer exists within the list and delete it.
     public void removeManufacturer(Manufacturer manufacturer) {
         int index = this.manufacturers.indexOf(manufacturer);
         if(index != -1){
             this.manufacturers.remove(manufacturer);
         }
+    }
+
+    public ObservableList<Product> searchProduct(String search) {
+        ObservableList<Product> result = FXCollections.observableArrayList();
+        for(Product product : this.activeProducts){
+            if(product.getName().contains(search)){
+                result.add(product);
+            }
+        }
+        return result;
     }
 
     public ObservableList<Manufacturer> getManufacturersList() {
@@ -62,5 +81,4 @@ public class Database {
     public ObservableList<Product> getDeletedProducts() {
         return inactiveProducts;
     }
-
 }

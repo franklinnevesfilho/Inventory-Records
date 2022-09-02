@@ -3,7 +3,7 @@ package com.abcenterprises.inventoryrecords.controllers;
 import com.abcenterprises.inventoryrecords.*;
 import com.abcenterprises.inventoryrecords.controllers.manufacturers.ManufacturersController;
 import com.abcenterprises.inventoryrecords.controllers.products.ProductsController;
-import javafx.event.ActionEvent;
+import com.abcenterprises.inventoryrecords.dataStorage.Database;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,8 +22,6 @@ public class MainController implements Initializable{
     @FXML
     BorderPane borderPane;
     @FXML
-    Button homeBtn;
-    @FXML
     Button productBtn;
     @FXML
     Button manufacturersBtn;
@@ -37,22 +35,8 @@ public class MainController implements Initializable{
 
     public void setDatabase(Database database) {
         this.database = database;
-        Address address = new Address("street", "city", "state", "zip", "country");
-        Manufacturer manufacturer = new Manufacturer("Company name", address);
-        Product product = new Product("Product",0,0 ,manufacturer);
-        this.database.addProduct(product);
-        this.database.addManufacturer(manufacturer);
     }
 
-    public void homeBtn(ActionEvent event) throws IOException {
-        System.out.println("Redirect Home");
-
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/home-view.fxml"));
-        Pane view = fxmlLoader.load();
-
-
-        borderPane.setCenter(view);
-    }
     public void productBtn() throws IOException {
 
         System.out.println("Redirect Products");

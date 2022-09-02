@@ -1,8 +1,8 @@
 package com.abcenterprises.inventoryrecords.controllers.products;
 
-import com.abcenterprises.inventoryrecords.Database;
-import com.abcenterprises.inventoryrecords.Manufacturer;
-import com.abcenterprises.inventoryrecords.Product;
+import com.abcenterprises.inventoryrecords.dataStorage.Database;
+import com.abcenterprises.inventoryrecords.dataStorage.Manufacturer;
+import com.abcenterprises.inventoryrecords.dataStorage.Product;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

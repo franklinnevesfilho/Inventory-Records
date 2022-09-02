@@ -12,4 +12,8 @@ module com.abcenterprises.inventoryrecords {
     opens com.abcenterprises.inventoryrecords.controllers.manufacturers to javafx.fxml;
     exports com.abcenterprises.inventoryrecords.controllers.products;
     opens com.abcenterprises.inventoryrecords.controllers.products to javafx.fxml;
+    exports com.abcenterprises.inventoryrecords.dataStorage;
+    opens com.abcenterprises.inventoryrecords.dataStorage to javafx.fxml;
+    exports com.abcenterprises.inventoryrecords.controllers.transactions;
+    opens com.abcenterprises.inventoryrecords.controllers.transactions to javafx.fxml;
 }

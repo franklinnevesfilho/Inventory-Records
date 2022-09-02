@@ -1,11 +1,14 @@
-package com.abcenterprises.inventoryrecords.controllers;
+package com.abcenterprises.inventoryrecords.controllers.manufacturers;
 
 import com.abcenterprises.inventoryrecords.Address;
 import com.abcenterprises.inventoryrecords.Database;
 import com.abcenterprises.inventoryrecords.Manufacturer;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
 public class AddManufacturersController{
@@ -30,10 +33,12 @@ public class AddManufacturersController{
         this.database = database;
     }
 
-    public void addBtnClicked(){
-        if(userInputIsBlank()){
+    @FXML
+    public void addBtnClicked(ActionEvent event){
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
 
-        }else {
+        if(!userInputIsBlank()){
             // add products
             database.addManufacturer(
                     new Manufacturer(newCompanyName.getText(),
@@ -53,6 +58,9 @@ public class AddManufacturersController{
             addressState.setText("");
             addressZip.setText("");
             addressCountry.setText("");
+
+            // close the window
+            thisStage.hide();
         }
     }
 

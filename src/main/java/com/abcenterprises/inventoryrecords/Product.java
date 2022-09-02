@@ -1,5 +1,8 @@
 package com.abcenterprises.inventoryrecords;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class Product {
     private Manufacturer manufacturer;
     private String name;

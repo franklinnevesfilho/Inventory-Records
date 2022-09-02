@@ -1,6 +1,8 @@
 package com.abcenterprises.inventoryrecords.controllers;
 
 import com.abcenterprises.inventoryrecords.*;
+import com.abcenterprises.inventoryrecords.controllers.manufacturers.ManufacturersController;
+import com.abcenterprises.inventoryrecords.controllers.products.ProductsController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -55,7 +57,7 @@ public class MainController implements Initializable{
 
         System.out.println("Redirect Products");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/products-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/products/products-view.fxml"));
         Pane view = fxmlLoader.load();
 
         ProductsController productsController = fxmlLoader.getController();
@@ -76,7 +78,7 @@ public class MainController implements Initializable{
 
         System.out.println("Redirect Manufacturer");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/manufacturers-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/manufacturers/manufacturers-view.fxml"));
         Pane view = fxmlLoader.load();
 
         ManufacturersController manufacturersController = fxmlLoader.getController();

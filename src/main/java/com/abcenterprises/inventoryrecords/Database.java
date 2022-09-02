@@ -7,6 +7,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Database {
+    public static final Address noAddress = new Address("street name", "city", "state", "zipcode","country");
+    public static final Manufacturer noManufacturer = new Manufacturer("none", noAddress);
+
+
     // I use a date formatter to be able to format the current date
     // this formatter will always be the same thus can be static and final.
     private static final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -42,7 +46,7 @@ public class Database {
     }
 
     // will check if the manufacturer exists within the list and delete it.
-    public void removeProduct(Manufacturer manufacturer) {
+    public void removeManufacturer(Manufacturer manufacturer) {
         int index = this.manufacturers.indexOf(manufacturer);
         if(index != -1){
             this.manufacturers.remove(manufacturer);
@@ -58,4 +62,5 @@ public class Database {
     public ObservableList<Product> getDeletedProducts() {
         return inactiveProducts;
     }
+
 }

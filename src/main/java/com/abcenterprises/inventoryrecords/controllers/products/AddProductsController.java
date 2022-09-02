@@ -1,13 +1,16 @@
-package com.abcenterprises.inventoryrecords.controllers;
+package com.abcenterprises.inventoryrecords.controllers.products;
 
 import com.abcenterprises.inventoryrecords.Address;
 import com.abcenterprises.inventoryrecords.Database;
 import com.abcenterprises.inventoryrecords.Manufacturer;
 import com.abcenterprises.inventoryrecords.Product;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.util.Objects;
 
@@ -15,9 +18,6 @@ import java.util.Objects;
 public class AddProductsController{
 
     Database database;
-
-    private final Address noAddress = new Address("street name", "city", "state", "zipcode","country");
-    private final Manufacturer noManufacturer = new Manufacturer("none", noAddress);
 
     @FXML
     private TextField newProductName;
@@ -34,12 +34,16 @@ public class AddProductsController{
     public void loadWindow(Database database){
        this.database = database;
 
-       manufacturerChoiceBox.setValue(noManufacturer);
+       manufacturerChoiceBox.setValue(Database.noManufacturer);
        manufacturerChoiceBox.getItems().addAll(database.getManufacturersList());
 
     }
+    @FXML
+    public void addBtnClicked(ActionEvent event){
 
-    public void addBtnClicked(){
+        // these two lines retrieves the current stage
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
 
       if(userInputIsBlank()){
 
@@ -52,10 +56,8 @@ public class AddProductsController{
                           manufacturerChoiceBox.getValue()
                   ));
 
-          // clear text fields
-          newProductName.setText("");
-          newProductUnits.setText("");
-          newProductUnitPrice.setText("");
+          // Closes window
+          thisStage.hide();
       }
     }
     boolean userInputIsBlank(){

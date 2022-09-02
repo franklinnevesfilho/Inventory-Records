@@ -8,4 +8,8 @@ module com.abcenterprises.inventoryrecords {
     exports com.abcenterprises.inventoryrecords;
     exports com.abcenterprises.inventoryrecords.controllers;
     opens com.abcenterprises.inventoryrecords.controllers to javafx.fxml;
+    exports com.abcenterprises.inventoryrecords.controllers.manufacturers;
+    opens com.abcenterprises.inventoryrecords.controllers.manufacturers to javafx.fxml;
+    exports com.abcenterprises.inventoryrecords.controllers.products;
+    opens com.abcenterprises.inventoryrecords.controllers.products to javafx.fxml;
 }

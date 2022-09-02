@@ -3,10 +3,20 @@ package com.abcenterprises.inventoryrecords;
 import com.abcenterprises.inventoryrecords.controllers.MainController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+
+/**
+ * Author: Franklin Neves Filho
+ * Student ID: 6208239
+ *
+ * Title: Inventory Records
+ *
+ * Description:
+ *      This program initializes a new Database object
+ *      and through the GUI allows the user to update and
+ *      modify the database.
+ */
 
 public class Application extends javafx.application.Application {
     public Database database = new Database();

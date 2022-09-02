@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="153.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcenterprises.inventoryrecords.controllers.products.EditProductsController">
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="542.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="doneBtn" mnemonicParsing="false" onAction="#doneBtnClick" text="DONE" />
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Edit Product" />
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <TextField fx:id="productName" prefHeight="25.0" prefWidth="284.0" promptText="Product Name" />
+                        <TextField fx:id="productUnits" promptText="Units" />
+                        <TextField fx:id="productUnitPrice" promptText="Unit Price " />
+                    </children>
+                </HBox>
+                <ChoiceBox fx:id="manufacturerChoiceBox" prefWidth="150.0" />
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

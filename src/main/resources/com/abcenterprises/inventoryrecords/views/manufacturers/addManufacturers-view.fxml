@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="153.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcenterprises.inventoryrecords.controllers.AddManufacturersController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="153.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcenterprises.inventoryrecords.controllers.manufacturers.AddManufacturersController">
     <bottom>
         <HBox alignment="CENTER" prefHeight="41.0" prefWidth="542.0" BorderPane.alignment="CENTER">
             <children>
@@ -16,7 +16,7 @@
             <children>
                 <Label text="Add Manufacturer" />
             <Separator opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="0.0" />
-                  <TextField fx:id="newCompanyName" prefHeight="25.0" prefWidth="284.0" promptText="Product Name" />
+                  <TextField fx:id="newCompanyName" prefHeight="25.0" prefWidth="284.0" promptText="Manufacturer name" />
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="addressStreet" prefHeight="25.0" prefWidth="163.0" promptText="Street " />

@@ -26,6 +26,10 @@ import java.io.IOException;
  *
  *      This program as of now does not contain the ability to track sales,
  *      but provides a base for further development.
+ *
+ *      The application was created in IntelliJ IDE
+ *      if used in Eclipse the Javafx sdk must be added 
+ *      to the build path of the project 
  */
 
 public class Application extends javafx.application.Application {

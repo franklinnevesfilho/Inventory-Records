@@ -21,10 +21,14 @@ import java.io.IOException;
  *      For the GUI I have used JavaFX, as it allows for
  *      css styling throughout
  *
- *      the controllers package contains the controllers for the
- *      fxml files of the gui
+ *      The dataStorage package contains the java classes used
+ *      for the storage system.
  *
- *      This program as of now does not contain the ability to track sales,
+ *
+ *      The controllers package contains the controllers for the
+ *      fxml files of the gui.
+ *
+ *      This program as of now does not contain any transactions,
  *      but provides a base for further development.
  *
  *      The application was created in IntelliJ IDE
@@ -33,6 +37,8 @@ import java.io.IOException;
  */
 
 public class Application extends javafx.application.Application {
+    public static final String styleSheet = Application.class.getResource("css/main-view.css").toExternalForm();
+
     // Once the application starts a new database is created.
     public Database database = new Database();
 
@@ -44,8 +50,7 @@ public class Application extends javafx.application.Application {
         MainController controller = fxmlLoader.getController();
         controller.setDatabase(database);
 
-        String css = this.getClass().getResource("css/main-view.css").toExternalForm();
-        scene.getStylesheets().add(css);
+        scene.getStylesheets().add(styleSheet);
 
         stage.setTitle("ABC Enterprise Records");
         stage.setScene(scene);

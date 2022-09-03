@@ -183,6 +183,9 @@ public class ProductsController implements Initializable {
 
             stage.setTitle("ABC add Product");
             Scene scene = new Scene(root);
+
+            scene.getStylesheets().add(Application.styleSheet);
+
             stage.setScene(scene);
 
             AddProductsController addProducts = fxmlLoader.getController();
@@ -206,6 +209,9 @@ public class ProductsController implements Initializable {
 
             stage.setTitle("ABC edit Product");
             Scene scene = new Scene(root);
+
+            scene.getStylesheets().add(Application.styleSheet);
+
             stage.setScene(scene);
 
             EditProductsController editProducts = fxmlLoader.getController();

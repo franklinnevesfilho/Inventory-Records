@@ -24,8 +24,12 @@
                   <TextField fx:id="newProductUnitPrice" promptText="Unit Price " />
                </children>
             </HBox>
-            <Label text="Manufacturer" />
-            <ChoiceBox fx:id="manufacturerChoiceBox" prefWidth="150.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Manufacturer : " />
+                  <ChoiceBox fx:id="manufacturerChoiceBox" prefWidth="150.0" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </center>

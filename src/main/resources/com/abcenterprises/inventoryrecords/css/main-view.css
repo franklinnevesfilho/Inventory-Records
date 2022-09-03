@@ -1,10 +1,117 @@
+/*
+----------------- Components ------------------
+ */
+.root{
+    -fx-background-color: #2b2b2b;
+}
+.label{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+}
+.text-field{
+    -fx-border-color: white;
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+.choice-box{
+    -fx-border-color: white;
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+.choice-box .context-menu{
+    -fx-background-color: #3c3f41;
+}
+.choice-box .menu-item > .label {
+    -fx-text-fill: white;
+}
+.choice-box .menu-item:focused {
+    -fx-background-color: white;
+}
+.choice-box .menu-item:focused > .label {
+    -fx-text-fill: black;
+}
+
+.button{
+    -fx-min-width: 105;
+    -fx-min-height: 40;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-background-color: #3a3a3a;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+    -fs-text-Wrap: line-through;
+
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+.button:hover {
+    -fx-text-fill: black;
+    -fx-background-color: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+/*
+---------------- Table view ----------------
+ */
+.table-view{
+    -fx-background-color: #3c3f41;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: #3c3f41;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #3c3f41;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+/*
+=============================================================================
+ */
+/*
+----------------- Styling through ID -------------------------
+ */
 #navBar{
     -fx-padding: 10;
     -fx-border-style: solid;
     -fx-border-width: 2;
     -fx-border-insets: 2px;
     -fx-border-radius: 5;
-    -fx-border-color: black;
+    -fx-border-color: white;
+    -fx-background-color: transparent;
+}
+#manufacturerChoiceBox{
+    -fx-padding: 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}
+#productsView{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+#manufacturersView{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
 }
 #deleteProduct {
     -fx-border-color: red;
@@ -15,22 +122,6 @@
     -fx-background-color: red;
     -fx-font-weight: bold;
 }
-.button{
-    -fx-min-width: 105;
-    -fx-min-height: 40;
-    -fx-wrap-text: true;
-    -fx-text-alignment: center;
-    -fx-background-color: transparent;
-    -fx-border-color: black;
-    -fx-text-fill: black;
-    -fs-text-Wrap: line-through;
-
-    -fx-border-radius: 10px;
-    -fx-background-radius: 10px;
-}
-.button:hover {
-    -fx-text-fill: white;
-    -fx-background-color: black;
-    -fx-font-weight: bold;
-    -fx-cursor: hand;
-}
+/*
+===================================================
+ */

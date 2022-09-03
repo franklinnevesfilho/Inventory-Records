@@ -80,6 +80,9 @@ public class ManufacturersController implements Initializable {
 
             stage.setTitle("ABC add Manufacturer");
             Scene scene = new Scene(root);
+
+            scene.getStylesheets().add(Application.styleSheet);
+
             stage.setScene(scene);
 
             AddManufacturersController addManufacturersController = fxmlLoader.getController();
@@ -101,6 +104,9 @@ public class ManufacturersController implements Initializable {
 
             stage.setTitle("ABC edit Manufacturer");
             Scene scene = new Scene(root);
+
+            scene.getStylesheets().add(Application.styleSheet);
+
             stage.setScene(scene);
 
             EditManufacturersController editManufacturer = fxmlLoader.getController();

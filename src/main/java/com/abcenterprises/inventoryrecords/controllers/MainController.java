@@ -20,7 +20,7 @@ public class MainController implements Initializable{
     private Database database;
 
     @FXML
-    BorderPane borderPane;
+    BorderPane mainView;
     @FXML
     Button productBtn;
     @FXML
@@ -47,7 +47,7 @@ public class MainController implements Initializable{
         ProductsController productsController = fxmlLoader.getController();
         productsController.loadProducts(this.database);
 
-        borderPane.setCenter(view);
+        mainView.setCenter(view);
     }
     public void transactionBtn() throws IOException {
         System.out.println("Redirect Transactions");
@@ -55,7 +55,7 @@ public class MainController implements Initializable{
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/transactions-view.fxml"));
         Pane view = fxmlLoader.load();
 
-        borderPane.setCenter(view);
+        mainView.setCenter(view);
     }
 
     public void manufacturerBtn() throws IOException {
@@ -68,7 +68,7 @@ public class MainController implements Initializable{
         ManufacturersController manufacturersController = fxmlLoader.getController();
         manufacturersController.loadManufacturers(this.database);
 
-        borderPane.setCenter(view);
+        mainView.setCenter(view);
     }
 
 

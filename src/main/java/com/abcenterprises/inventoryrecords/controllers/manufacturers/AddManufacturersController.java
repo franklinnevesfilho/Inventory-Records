@@ -3,6 +3,7 @@ package com.abcenterprises.inventoryrecords.controllers.manufacturers;
 import com.abcenterprises.inventoryrecords.dataStorage.Address;
 import com.abcenterprises.inventoryrecords.dataStorage.Database;
 import com.abcenterprises.inventoryrecords.dataStorage.Manufacturer;
+import com.abcenterprises.inventoryrecords.dataStorage.Product;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -34,9 +35,7 @@ public class AddManufacturersController{
     }
 
     @FXML
-    public void addBtnClicked(ActionEvent event){
-        Node node = (Node) event.getSource();
-        Stage thisStage = (Stage) node.getScene().getWindow();
+    public void addBtnClicked(){
 
         if(!userInputIsBlank()){
             // add products
@@ -59,9 +58,14 @@ public class AddManufacturersController{
             addressZip.setText("");
             addressCountry.setText("");
 
-            // close the window
-            thisStage.hide();
         }
+    }
+    @FXML
+    public void doneBtnClicked(ActionEvent event){
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
+
+        thisStage.hide();
     }
 
     boolean userInputIsBlank(){

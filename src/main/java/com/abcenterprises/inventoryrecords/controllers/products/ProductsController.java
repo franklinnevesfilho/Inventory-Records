@@ -175,7 +175,7 @@ public class ProductsController implements Initializable {
 
     // Opens new window to type in information about new product (see AddProductsController)
     // adds the product to the database
-    public void addProductBtn() throws IOException {
+    public void addProductBtn(){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/products/addProducts-view.fxml"));
             Parent root = fxmlLoader.load();
@@ -194,7 +194,7 @@ public class ProductsController implements Initializable {
             stage.setResizable(false);
             stage.show();
 
-        }catch(Exception e){
+        }catch(Exception ignored){
 
         }
     }

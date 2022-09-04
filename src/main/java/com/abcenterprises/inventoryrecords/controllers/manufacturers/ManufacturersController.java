@@ -3,6 +3,7 @@ package com.abcenterprises.inventoryrecords.controllers.manufacturers;
 import com.abcenterprises.inventoryrecords.Application;
 import com.abcenterprises.inventoryrecords.dataStorage.Database;
 import com.abcenterprises.inventoryrecords.dataStorage.Manufacturer;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -28,6 +30,8 @@ public class ManufacturersController implements Initializable {
     Button deleteBtn;
     @FXML
     Button editBtn;
+    @FXML
+    TextField searchBar;
     @FXML
     TableView<Manufacturer> manufacturerTable;
 
@@ -67,9 +71,18 @@ public class ManufacturersController implements Initializable {
         database.removeManufacturer(manufacturerSelected);
     }
 
-    public void loadManufacturers(Database database){
+    public void loadWindow(Database database){
         this.database = database;
         manufacturerTable.setItems(database.getManufacturersList());
+    }
+
+    @FXML
+    public void searchBar(ActionEvent event){
+        if(!searchBar.getText().isBlank()){
+            manufacturerTable.setItems(database.searchManufacturers(searchBar.getText()));
+        }else{
+            manufacturerTable.setItems(database.getManufacturersList());
+        }
     }
 
     public void addManufacturerBtn() throws IOException {

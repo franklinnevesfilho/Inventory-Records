@@ -16,18 +16,19 @@ public class Database {
     private static final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
     // For storage, I will be using ObservableList as they are useful for the GUI.
-    private ObservableList<Manufacturer> manufacturers = FXCollections.observableArrayList();
+    private ObservableList<Manufacturer> manufacturersList = FXCollections.observableArrayList();
     private ObservableList<Product> activeProducts = FXCollections.observableArrayList();
     private ObservableList<Product> inactiveProducts = FXCollections.observableArrayList();
 
     // The constructor is blank as all the values of this class will be created after the fact.
     public Database() {}
 
-
+    // Adding a manufacturer
     public void addManufacturer(Manufacturer manufacturer) {
-        this.manufacturers.add(manufacturer);
+        this.manufacturersList.add(manufacturer);
     }
 
+    // adding a product
     public void addProduct(Product product) {
         // get the current date and establishes the purchase date for product
         Date date = new Date();
@@ -45,6 +46,7 @@ public class Database {
         }
     }
 
+    // undo delete the product
     public void undoDeleteProduct(Product product) {
         int index = this.inactiveProducts.indexOf(product);
         if(index != -1){
@@ -56,12 +58,13 @@ public class Database {
 
     // will check if the manufacturer exists within the list and delete it.
     public void removeManufacturer(Manufacturer manufacturer) {
-        int index = this.manufacturers.indexOf(manufacturer);
+        int index = this.manufacturersList.indexOf(manufacturer);
         if(index != -1){
-            this.manufacturers.remove(manufacturer);
+            this.manufacturersList.remove(manufacturer);
         }
     }
 
+    // Search Methods will be called everytime teh enter key is pressed.
     public ObservableList<Product> searchProduct(String search) {
         ObservableList<Product> result = FXCollections.observableArrayList();
         for(Product product : this.activeProducts){
@@ -71,9 +74,19 @@ public class Database {
         }
         return result;
     }
+    public ObservableList<Manufacturer> searchManufacturers(String search) {
+        ObservableList<Manufacturer> result = FXCollections.observableArrayList();
+        for(Manufacturer manufacturer : this.manufacturersList){
+            if(manufacturer.getCompany().contains(search)){
+                result.add(manufacturer);
+            }
+        }
+        return result;
+    }
 
+    // Getters
     public ObservableList<Manufacturer> getManufacturersList() {
-        return manufacturers;
+        return manufacturersList;
     }
     public ObservableList<Product> getProductsList() {
         return activeProducts;

@@ -66,7 +66,7 @@ public class MainController implements Initializable{
         Pane view = fxmlLoader.load();
 
         ManufacturersController manufacturersController = fxmlLoader.getController();
-        manufacturersController.loadManufacturers(this.database);
+        manufacturersController.loadWindow(this.database);
 
         mainView.setCenter(view);
     }

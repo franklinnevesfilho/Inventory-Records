@@ -113,10 +113,15 @@
     -fx-background-radius: 5px;
     -fx-padding: 5px;
 }
-#deleteProduct {
+#deleteProduct, #deleteBtn {
     -fx-border-color: red;
 }
 
+#deleteBtn:hover {
+    -fx-text-fill: white;
+    -fx-background-color: red;
+    -fx-font-weight: bold;
+}
 #deleteProduct:hover{
     -fx-text-fill: white;
     -fx-background-color: red;

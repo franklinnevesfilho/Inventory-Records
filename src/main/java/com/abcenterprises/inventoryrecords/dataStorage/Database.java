@@ -68,7 +68,7 @@ public class Database {
     public ObservableList<Product> searchProduct(String search) {
         ObservableList<Product> result = FXCollections.observableArrayList();
         for(Product product : this.activeProducts){
-            if(product.getName().contains(search)){
+            if(product.getName().toUpperCase().contains(search.toUpperCase())){
                 result.add(product);
             }
         }

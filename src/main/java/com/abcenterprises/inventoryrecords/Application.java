@@ -1,6 +1,6 @@
 package com.abcenterprises.inventoryrecords;
 
-import com.abcenterprises.inventoryrecords.controllers.MainController;
+import com.abcenterprises.inventoryrecords.controllers.LockscreenController;
 import com.abcenterprises.inventoryrecords.dataStorage.Database;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -37,18 +37,18 @@ import java.io.IOException;
  */
 
 public class Application extends javafx.application.Application {
-    public static final String styleSheet = Application.class.getResource("css/main-view.css").toExternalForm();
+    public static final String styleSheet = Application.class.getResource("css/lockscreen.css").toExternalForm();
 
     // Once the application starts a new database is created.
     public Database database = new Database();
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/main-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/lockscreen-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        MainController controller = fxmlLoader.getController();
-        controller.setDatabase(database);
+        LockscreenController controller = fxmlLoader.getController();
+        //controller.setDatabase(database);
 
         scene.getStylesheets().add(styleSheet);
 
